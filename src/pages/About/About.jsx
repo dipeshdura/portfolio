@@ -4,7 +4,7 @@ import profile from "../../assets/profile.jpg";
 const About = () => {
   return (
     <div className="about">
-      <div className="info">
+    
         <div className="card-right">
           <div className="left">
             <h1>👋About</h1>
@@ -75,16 +75,31 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div>
-          <div className="info-desc">
+      
+      <div className="info-desc">
+        <div className="info">
 
-          <div className="title">
-          🎯 Goals & Aspirations
-          </div>
-          <div className="desc">
-          Right now, I'm focused on sharpening my skills, building real-world projects, and exploring opportunities as a junior full-stack developer. I'm also passionate about open-source, clean code, and building things that make an impact.
-          </div>
-          </div>
+        <div className="title">🎯 Goals & Aspirations</div>
+        <div className="desc">
+          Right now, I'm focused on sharpening my skills, building real-world
+          projects, and exploring opportunities as a junior full-stack
+          developer. I'm also passionate about open-source, clean code, and
+          building things that make an impact.
+        </div>
+        </div>
+        <div className="info">
+
+        <div className="title">🎮 Outside of Code</div>
+        <div className="desc">
+        When I'm not coding, you'll probably find me editing gameplay videos, watching football, or exploring the latest in AI tools and tech trends.
+        </div>
+        </div>
+        <div className="info">
+
+        <div className="title">🤝 Let's Connect</div>
+        <div className="desc">
+        I'm always open to collaboration, freelance work, or just a tech talk. Feel free to check out my [Projects] or head over to the <b> <a href="/contact">Contact</a></b> page to reach out!
+        </div>
         </div>
       </div>
     </div>
