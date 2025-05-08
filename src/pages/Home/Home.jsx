@@ -28,7 +28,7 @@ const Home = () => {
             </div>
           </div>
           <div className="buttons">
-            <button>Hire me</button>
+            <button>Let's work Together</button>
             <button>Download CV</button>
           </div>
         </div>
