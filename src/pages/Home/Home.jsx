@@ -1,7 +1,9 @@
 import React from 'react'
 import "./home.scss";
-import { TiSocialLinkedinCircular } from "react-icons/ti";
+
 import profile from "../../assets/profile.jpg";
+import github from "../../assets/github.png";
+import linkedin from "../../assets/linkedin.png";
 const Home = () => {
   return (
     <div className="home">
@@ -13,23 +15,23 @@ const Home = () => {
           <div className="social-media-links">
             <div className="social-media">
             <a href="#" >
-          <TiSocialLinkedinCircular className="social-icon" />
+              <img src={github} alt={github} className="social-icon" />
             </a>
             </div>
             <div className="social-media">
             <a href="#" >
-          <TiSocialLinkedinCircular className="social-icon" />
-            </a>
-            </div>
-            <div className="social-media">
-            <a href="#" >
-          <TiSocialLinkedinCircular className="social-icon" />
+              <img src={linkedin} alt={linkedin} className="social-icon" />
+
             </a>
             </div>
           </div>
           <div className="buttons">
+            <a href="/contact">
             <button>Let's work Together</button>
+            </a>
+            <a href="#" download="my-resume">
             <button>Download CV</button>
+            </a>
           </div>
         </div>
         <div className="right">

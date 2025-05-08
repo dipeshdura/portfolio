@@ -17,7 +17,7 @@ const Contact = () => {
           <form action="">
             <div className="form-box">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" placeholder="Name" />
+              <input type="text" name="name" placeholder="Name" autoFocus />
             </div>
             <div className="form-box">
               <label htmlFor="email">Email</label>
@@ -48,13 +48,13 @@ const Contact = () => {
         <div className="right">
           <div className="rightContainer">
             <div className="infoContainer">
-              <a className="info" href="#">
+              <a className="social-info" href="#">
             <div className="icon">
               <img src={github} alt={github} />
               </div>
             <div className="title">GitHub</div>
               </a>
-              <a className="info" href="#">
+              <a className="social-info" href="#">
             <div className="icon">
                 <img src={linkedin} alt={linkedin} />
               </div>

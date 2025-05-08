@@ -88,6 +88,9 @@
         // background-color: yellow;
         margin: 0px 20px;
         margin-bottom: 20px;
+        @include sm{
+            margin: 0;
+        }
         .title{
             font-size: 25px;
             font-weight: bold;
