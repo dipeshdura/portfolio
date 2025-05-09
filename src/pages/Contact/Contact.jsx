@@ -2,13 +2,49 @@ import React, { useEffect, useState } from "react";
 import "./contact.scss";
 import github from "../../assets/github.png";
 import linkedin from "../../assets/linkedin.png";
+import useContact from "../../Hooks/useContact";
 const Contact = () => {
   const [isSmall, setIsSmall] =useState(false);
-
   useEffect(()=>{
     const smwidth =window.innerWidth >640;
     setIsSmall(smwidth);
   },[])
+
+  const [formData, setFormData] =useState({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+          });
+
+  const handleOnChange =(e)=>{
+   
+      setFormData({
+        ...formData,
+        [e.target.id]:e.target.value
+      })
+    
+  }
+
+  const {sendContact} =useContact();
+  const handleSubmit =async(e)=>{
+    e.preventDefault();
+    try {
+        const result =await sendContact(formData);
+        console.log("Message sent",result);
+        setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+          })
+    } catch (error) {
+      console.error("Error sending message:",error);
+      
+    }
+
+  }
+
   return (
     <div className="contact">
       <div className="info">
@@ -20,29 +56,45 @@ const Contact = () => {
       </div>
       <div className="container">
         <div className="left">
-          <form action="">
+          <form  onSubmit={handleSubmit}>
             <div className="form-box">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" placeholder="Name" autoFocus />
+              <input type="text"
+              onChange={handleOnChange}
+               name="name"
+               id="name"
+               placeholder="Name"
+               value={formData.name}
+               autoFocus />
             </div>
             <div className="form-box">
               <label htmlFor="email">Email</label>
               <input
                 type="email"
+                onChange={handleOnChange}
                 name="email"
+                id="email"
+                value={formData.email}
                 placeholder="example@gmail.com"
               />
             </div>
             <div className="form-box">
               <label htmlFor="subject">Subject</label>
-              <input type="text" name="subject" placeholder="Subject" />
+              <input type="text"
+              onChange={handleOnChange}
+               name="subject"
+               id="subject"
+               value={formData.subject}
+                placeholder="Subject" />
             </div>
             <div className="form-box ">
               <label htmlFor="message">Message</label>
               <textarea
                 name="message"
+                onChange={handleOnChange}
                 rows={isSmall ? "10":"5"}
                 id="message"
+                value={formData.message}
                 placeholder="Message...."
               ></textarea>
             </div>
@@ -54,13 +106,13 @@ const Contact = () => {
         <div className="right">
           <div className="rightContainer">
             <div className="infoContainer">
-              <a className="social-info" href="#">
+              <a className="social-info" href="https://github.com/dipeshdura" target="_blank">
             <div className="icon">
               <img src={github} alt={github} />
               </div>
             <div className="title">GitHub</div>
               </a>
-              <a className="social-info" href="#">
+              <a className="social-info" href="https://www.linkedin.com/in/dipesh-dura-862909264/" target="_blank">
             <div className="icon">
                 <img src={linkedin} alt={linkedin} />
               </div>
@@ -72,7 +124,7 @@ const Contact = () => {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2928.380506139405!2d84.40506577906838!3d27.650765756008287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sorbit!5e1!3m2!1sen!2snp!4v1746706306168!5m2!1sen!2snp"
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer"
               ></iframe>
             </div>
           </div>

@@ -14,12 +14,12 @@ const Home = () => {
 
           <div className="social-media-links">
             <div className="social-media">
-            <a href="#" >
+            <a href="https://github.com/dipeshdura" target="_blank" >
               <img src={github} alt={github} className="social-icon" />
             </a>
             </div>
             <div className="social-media">
-            <a href="#" >
+            <a href="https://www.linkedin.com/in/dipesh-dura-862909264/" target="_blank" >
               <img src={linkedin} alt={linkedin} className="social-icon" />
 
             </a>
