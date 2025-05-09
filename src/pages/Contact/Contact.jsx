@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./contact.scss";
 import github from "../../assets/github.png";
 import linkedin from "../../assets/linkedin.png";
 const Contact = () => {
+  const [isSmall, setIsSmall] =useState(false);
+
+  useEffect(()=>{
+    const smwidth =window.innerWidth >640;
+    setIsSmall(smwidth);
+  },[])
   return (
     <div className="contact">
       <div className="info">
@@ -35,7 +41,7 @@ const Contact = () => {
               <label htmlFor="message">Message</label>
               <textarea
                 name="message"
-                rows="10"
+                rows={isSmall ? "10":"5"}
                 id="message"
                 placeholder="Message...."
               ></textarea>
