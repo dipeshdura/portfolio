@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./home.scss";
 
 import profile from "../../assets/profile.jpg";
@@ -17,24 +18,24 @@ const Home = () => {
 
           <div className="social-media-links">
             <div className="social-media">
-            <a href={import.meta.env.VITE_GITHUB} target="_blank" >
+            <Link to={import.meta.env.VITE_GITHUB} target="_blank" >
               <img src={github} alt={github} className="social-icon" />
-            </a>
+            </Link>
             </div>
             <div className="social-media">
-            <a href={import.meta.env.VITE_LINKEDIN} target="_blank" >
+            <Link to={import.meta.env.VITE_LINKEDIN} target="_blank" >
               <img src={linkedin} alt={linkedin} className="social-icon" />
 
-            </a>
+            </Link>
             </div>
           </div>
           <div className="buttons">
-            <a href="/contact">
+            <Link to="/contact">
             <button>Let's work Together</button>
-            </a>
-            <a href="#" download="my-resume">
+            </Link>
+            <Link to="#" download="my-resume">
             <button>Download CV</button>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="right">

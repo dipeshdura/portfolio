@@ -1,6 +1,7 @@
 import React from "react";
 import "./about.scss";
 import profile from "../../assets/profile.jpg";
+import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="about">
@@ -99,14 +100,14 @@ const About = () => {
             I'm always open to collaboration, freelance work, or just a tech
             talk. Feel free to check out my{" "}
             <b>
-              <a href={import.meta.env.VITE_GITHUB} target="_blank">
+              <Link to={import.meta.env.VITE_GITHUB} target="_blank">
                 GitHub
-              </a>
+              </Link>
             </b>{" "}
             or head over to the{" "}
             <b>
               {" "}
-              <a href="/contact">Contact</a>
+              <Link to="/contact">Contact</Link>
             </b>{" "}
             page to reach out!
           </div>

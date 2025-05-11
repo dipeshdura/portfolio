@@ -1,26 +1,27 @@
 import React, { useState } from 'react'
 import "./navbar.scss";
 import { IoMenu } from "react-icons/io5";
+import {Link} from "react-router-dom";
 const Navbar = () => {
     const [open, setOpen] =useState(false);
   return (
    <nav>
         <div className="left">
-            <a href="/" className="logo">
+            <Link to="/" className="logo">
                 <p>DU<span>RA</span></p>
-            </a>
+            </Link>
         </div>
         <div className={`center ${open? "active":""}`}>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
 
 
         </div>
         <div className="right">
-            <a href="/contact" className="hireme">
+            <Link to="/contact" className="hireme">
                 Hire me
-            </a>
+            </Link>
             <div className="menu">
                 <IoMenu className="menu-logo" onClick={()=>setOpen(!open)}/>
             </div>

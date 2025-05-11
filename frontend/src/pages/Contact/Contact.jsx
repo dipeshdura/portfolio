@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./contact.scss";
 import github from "../../assets/github.png";
 import linkedin from "../../assets/linkedin.png";
@@ -106,18 +107,18 @@ const Contact = () => {
         <div className="right">
           <div className="rightContainer">
             <div className="infoContainer">
-              <a className="social-info" href={import.meta.env.VITE_GITHUB} target="_blank">
+              <Link className="social-info" to={import.meta.env.VITE_GITHUB} target="_blank">
             <div className="icon">
               <img src={github} alt={github} />
               </div>
             <div className="title">GitHub</div>
-              </a>
-              <a className="social-info" href={import.meta.env.VITE_LINKEDIN} target="_blank">
+              </Link>
+              <Link className="social-info" to={import.meta.env.VITE_LINKEDIN} target="_blank">
             <div className="icon">
                 <img src={linkedin} alt={linkedin} />
               </div>
             <div className="title">LinkedIn</div>
-              </a>
+              </Link>
 
             </div>
             <div className="map">
