@@ -1,4 +1,4 @@
-@import "../responsive.scss";
+@use "../responsive.scss";
 .layout{
     min-width: fit-content;
     max-width: 1336px;
