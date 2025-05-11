@@ -1,4 +1,4 @@
-@use "../../responsive.scss";
+@use "../../responsive.scss" as *;
 .home{
     display: flex;
     height: 100vh;
