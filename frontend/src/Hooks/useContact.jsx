@@ -2,7 +2,7 @@
 const useContact =()=>{
     const sendContact =async({name,email,subject,message})=>{
 
-        const response =await fetch(`${import.meta.env.VITE_BASE_URL}/api/contact`,{
+        const response =await fetch("https://portfolio-scx5.onrender.com/api/contact",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
