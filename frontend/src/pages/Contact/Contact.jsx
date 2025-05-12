@@ -40,7 +40,7 @@ const Contact = () => {
             message: ''
           })
     } catch (error) {
-      console.error("Error sending message:",error);
+      console.error("Error sending message:",error.message);
       
     }
 

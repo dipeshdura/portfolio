@@ -12,7 +12,6 @@ export default defineConfig({
         target: "https://portfolio-scx5.onrender.com",
         secure: false,
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
