@@ -6,8 +6,7 @@ import profile from "../../assets/profile.jpg";
 import github from "../../assets/github.png";
 import linkedin from "../../assets/linkedin.png";
 const Home = () => {
-  const gitlink =import.meta.env.VITE_GITHUB;
-  console.log(gitlink);
+
   
   return (
     <div className="home">
