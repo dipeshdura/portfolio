@@ -93,14 +93,14 @@ nav {
         transition: all 1s ease;
         // color:black;
 
+    }
         &:active {
           transform: scale(0.9);
         }
-        &:active {
-          transform: scale(0.9);
-        }
-      }
-      .menu {
+     
+     
+    }
+     .menu {
         display: none;
         @include sm {
           display: flex;
@@ -115,6 +115,5 @@ nav {
           color: white;
         }
       }
-    }
   }
 }
