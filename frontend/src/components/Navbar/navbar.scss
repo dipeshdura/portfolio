@@ -90,19 +90,19 @@ nav{
                 padding: 12px;
                 display: none;
             }
-<<<<<<< HEAD
+
              &:hover{
                 box-shadow: inset 0 -100px 0 rgb(216, 28, 28);
                 // color:black;
                 
-=======
+
             &:hover{
                 box-shadow:inset 0 -100px 0 white;
                 transition:all 1s ease;
             }
             &:active{
                 transform: scale(0.9);
->>>>>>> d8480a53c3baafc0adaf809f6ca472ba30c64274
+
             }
             &:active{
                 transform: scale(0.9);
@@ -126,4 +126,5 @@ nav{
             }
         }
     }
+}
 }
