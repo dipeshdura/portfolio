@@ -4,20 +4,21 @@ import { IoMenu } from "react-icons/io5";
 import {Link} from "react-router-dom";
 const Navbar = () => {
     const menuRef =useRef(null);
+    const iconRef =useRef(null);
     const [isOpen, setIsOpen] =useState(false);
     useEffect(()=>{
         const handleToggle =(e)=>{
-            if(menuRef.current && !menuRef.current.contains(e.target)){
-                setIsOpen(!isOpen);
+            if(menuRef.current && !menuRef.current.contains(e.target) &&
+         iconRef.current && !iconRef.current.contains(e.target)){
+                setIsOpen(false);
             }
-            
         }
         document.addEventListener("mousedown",handleToggle);
         return ()=>{
             document.removeEventListener("mousedown",handleToggle)
         }
     },[])
-    
+   
    
   return (
    <nav>
@@ -37,8 +38,8 @@ const Navbar = () => {
             <Link to="/contact" className="hireme">
                 Hire me
             </Link>
-            <div className="menu">
-                <IoMenu className="menu-logo" onClick={()=>setIsOpen(!isOpen)}/>
+            <div className="menu" ref={iconRef}>
+                <IoMenu className="menu-logo" onClick={(e)=>{e.stopPropagation(); setIsOpen(prev =>!prev)}}/>
             </div>
         </div>
    </nav>

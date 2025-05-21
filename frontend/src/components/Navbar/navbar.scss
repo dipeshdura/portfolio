@@ -38,19 +38,7 @@ nav {
     a {
       text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.5);
       transition: all 1s ease;
-      // background-color: lightpink;
-      // padding: 15px 30px;
-      // border-radius: 5px;
-      // border: 1px solid white;
-      // transition: all 1s ease;
-      // &:hover{
-      //   transition: all 1s ease;
-      //   box-shadow:inset 0px -100px 0px lightblue;
-      // }
-      // &:active{
-      //   transition: all 1s ease;
-      //   transform: scale(0.9);
-      // }
+     
     }
     @include sm {
       display: none;
