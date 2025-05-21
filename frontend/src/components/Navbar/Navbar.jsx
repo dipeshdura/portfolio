@@ -4,10 +4,11 @@ import { IoMenu } from "react-icons/io5";
 import {Link} from "react-router-dom";
 const Navbar = () => {
     const menuRef =useRef(null);
+    const [isOpen, setIsOpen] =useState(false);
     useEffect(()=>{
         const handleToggle =(e)=>{
             if(menuRef.current && !menuRef.current.contains(e.target)){
-                setOpen(false);
+                setIsOpen(!isOpen);
             }
             
         }
@@ -17,7 +18,6 @@ const Navbar = () => {
         }
     },[])
     
-    const [open, setOpen] =useState(false);
    
   return (
    <nav>
@@ -26,7 +26,7 @@ const Navbar = () => {
                 <p>DU<span>RA</span></p>
             </Link>
         </div>
-        <div className={`center ${open? "active":""}`} ref={menuRef}>
+        <div className={`center ${isOpen? "active":""}`} ref={menuRef}>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
@@ -38,7 +38,7 @@ const Navbar = () => {
                 Hire me
             </Link>
             <div className="menu">
-                <IoMenu className="menu-logo" onClick={()=>setOpen(!open)}/>
+                <IoMenu className="menu-logo" onClick={()=>setIsOpen(!isOpen)}/>
             </div>
         </div>
    </nav>
