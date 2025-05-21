@@ -46,6 +46,9 @@
           @include sm {
             grid-column: 1/-1;
           }
+          label{
+            color:white;
+          }
           input,
           textarea {
             margin-top: 10px;
