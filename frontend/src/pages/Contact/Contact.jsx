@@ -12,10 +12,7 @@ const Contact = () => {
   },[])
 
   const [formData, setFormData] =useState({
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
+
           });
 
   const handleOnChange =(e)=>{
@@ -33,12 +30,7 @@ const Contact = () => {
     try {
         const result =await sendContact(formData);
         console.log("Message sent",result);
-        setFormData({
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
-          })
+       
     } catch (error) {
       console.error("Error sending message:",error.message);
       
@@ -65,7 +57,7 @@ const Contact = () => {
                name="name"
                id="name"
                placeholder="Name"
-               value={formData.name}
+               value={formData.name || ""}
                autoFocus />
             </div>
             <div className="form-box">
@@ -75,7 +67,7 @@ const Contact = () => {
                 onChange={handleOnChange}
                 name="email"
                 id="email"
-                value={formData.email}
+                value={formData.email || ""}
                 placeholder="example@gmail.com"
               />
             </div>
@@ -85,7 +77,7 @@ const Contact = () => {
               onChange={handleOnChange}
                name="subject"
                id="subject"
-               value={formData.subject}
+               value={formData.subject || ""}
                 placeholder="Subject" />
             </div>
             <div className="form-box ">
@@ -95,7 +87,7 @@ const Contact = () => {
                 onChange={handleOnChange}
                 rows={isSmall ? "10":"5"}
                 id="message"
-                value={formData.message}
+                value={formData.message ||""}
                 placeholder="Message...."
               ></textarea>
             </div>
