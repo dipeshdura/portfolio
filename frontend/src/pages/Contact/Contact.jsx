@@ -12,7 +12,10 @@ const Contact = () => {
   },[])
 
   const [formData, setFormData] =useState({
-
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
           });
 
   const handleOnChange =(e)=>{
@@ -30,7 +33,12 @@ const Contact = () => {
     try {
         const result =await sendContact(formData);
         console.log("Message sent",result);
-       
+        setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+          })
     } catch (error) {
       console.error("Error sending message:",error.message);
       
