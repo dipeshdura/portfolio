@@ -30,6 +30,10 @@ const Contact = () => {
   const {sendContact} =useContact();
   const handleSubmit =async(e)=>{
     e.preventDefault();
+    const {name,email,subject,message} =formData;
+    if(!name || !email || !subject || !message){
+      return;
+    }
     try {
         const result =await sendContact(formData);
         console.log("Message sent",result);
